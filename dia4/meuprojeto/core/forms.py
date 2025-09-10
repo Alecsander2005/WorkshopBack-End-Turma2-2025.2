@@ -1,9 +1,14 @@
-from django.forms import forms
-from ...meuprojeto.core.models import endereco    
+from django import forms
+from .models import endereco
 
-class Enderecoform(forms.ModelForm):
+class enderecoform(forms.ModelForm):  # Nome do formulário com "e" minúsculo
     class Meta:
         model = endereco
-        fields = ['cep']
+        fields = ['cep']  # Apenas o campo CEP será exibido no formulário
         labels = {'cep': 'CEP'}
-        widgets = {'cep': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite o CEP'})}  
+        widgets = {
+            'cep': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Digite o CEP'
+            })
+        }

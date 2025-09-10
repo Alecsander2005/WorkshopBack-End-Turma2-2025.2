@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Detalhes do Endereço</h1>
+<p><strong>Rua:</strong> {{ endereco.rua }}</p>
+<p><strong>Bairro:</strong> {{ endereco.bairro }}</p>
+<p><strong>Cidade:</strong> {{ endereco.cidade }}</p>
+<p><strong>Estado:</strong> {{ endereco.estado }}</p>
+<p><strong>CEP:</strong> {{ endereco.cep }}</p>
+<a href="{% url 'listar_enderecos' %}">Voltar</a>
+{% endblock %}
