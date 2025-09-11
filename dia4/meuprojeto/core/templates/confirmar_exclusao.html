@@ -2,10 +2,10 @@
 
 {% block content %}
 <h1>Confirmar Exclusão</h1>
-<p>Tem certeza de que deseja excluir o endereço "{{ endereco }}"?</p>
+<p>Tem certeza de que deseja excluir o endereço "{{ object }}"?</p>
 <form method="post">
     {% csrf_token %}
-    <button type="submit">Sim, excluir</button>
+    <button type="submit" class="btn btn-danger">Sim, excluir</button>
 </form>
-<a href="{% url 'listar_enderecos' %}">Cancelar</a>
+<a href="{% url 'listar_enderecos' %}" class="btn btn-secondary">Cancelar</a>
 {% endblock %}

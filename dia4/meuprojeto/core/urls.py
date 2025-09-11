@@ -1,9 +1,9 @@
 from django.urls import path
-from .views import CriarEnderecoView, ListarEnderecosView, DetalharEnderecoView, ExcluirEnderecoView
+from .views import ListarEnderecosView, ViaCepAPIView, CriarEnderecoView, ExcluirEnderecoView
 
 urlpatterns = [
-    path('', ListarEnderecosView.as_view(), name='listar_enderecos'),  # Lista de endereços
-    path('criar/', CriarEnderecoView.as_view(), name='criar_endereco'),  # Criar novo endereço
-    path('detalhar/<int:pk>/', DetalharEnderecoView.as_view(), name='detalhar_endereco'),  # Detalhar endereço
-    path('excluir/<int:pk>/', ExcluirEnderecoView.as_view(), name='excluir_endereco'),  # Excluir endereço
+    path('', ListarEnderecosView.as_view(), name='listar_enderecos'),  # Página inicial
+    path('api/viacep/', ViaCepAPIView.as_view(), name='viacep_api'),  # API pública ViaCEP
+    path('adicionar/', CriarEnderecoView.as_view(), name='adicionar_endereco'),  # Adicionar CEP
+    path('deletar/<int:pk>/', ExcluirEnderecoView.as_view(), name='deletar_endereco'),  # Deletar CEP
 ]
